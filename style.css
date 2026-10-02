@@ -879,8 +879,20 @@ main .recent-transactions .card-details .card {
 /* =============----MEDIA QUERY FOR MOBILE PHONES============== */
 
 @media screen and (max-width: 600px) {
+    body {
+        min-height: 100vh;
+    }
+
+    nav {
+        padding: 0.8rem 0;
+    }
+
+    nav .container {
+        width: 90%;
+    }
+
     nav .profile-area {
-        gap: 2.6rem;
+        gap: 1.2rem;
     }
 
     nav .profile h5,
@@ -888,15 +900,109 @@ main .recent-transactions .card-details .card {
         display: none;
     }
 
+    main {
+        width: 90%;
+        margin: 0.75rem auto 3rem;
+    }
+
+    main section.middle .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    main section.middle .header h1 {
+        font-size: 1.8rem;
+    }
+
+    main section.middle .header-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-left: 0;
+    }
+
+    main section.middle .header-actions input[type='date'] {
+        grid-column: 1 / -1;
+        min-height: 2.9rem;
+    }
+
+    main section.middle .header-actions select,
+    main section.middle .header-actions button {
+        width: 100%;
+        min-height: 2.9rem;
+        font-size: 0.82rem;
+    }
+
+    main section.middle .header-actions .add-card-btn {
+        grid-column: 1 / -1;
+        font-weight: 700;
+    }
+
     main section.middle .cards {
         grid-template-columns: 1fr;
     }
 
+    main .monthly-report {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+    }
+
+    main .monthly-report .report {
+        background: var(--color-white);
+        border-radius: 1rem;
+        padding: 0.9rem 0.8rem;
+        box-shadow: 0 0.7rem 1.4rem rgba(39, 40, 47, 0.06);
+    }
+
+    main .monthly-report .report h3 {
+        margin-bottom: 0.55rem;
+        font-size: 0.84rem;
+    }
+
+    main .monthly-report h1 {
+        font-size: 1.25rem;
+    }
+
+    main .monthly-report .text-muted {
+        font-size: 0.7rem;
+        line-height: 1.45;
+    }
+
     main section.middle .fast-payment {
         flex-direction: column;
-        align-items: flex-start;
-        margin-top: 3rem;
-        gap: 1.4rem;
+        align-items: stretch;
+        margin-top: 2.25rem;
+        gap: 1rem;
+    }
+
+    main .fast-payment .badges {
+        width: 100%;
+    }
+
+    main .fast-payment .badge {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.7rem 0.9rem;
+    }
+
+    .card-modal__content {
+        width: min(100vw - 1rem, 34rem);
+        padding: 1rem;
+    }
+
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .card-modal__content .primary-btn,
+    .card-modal__content .secondary-btn {
+        width: 100%;
     }
 
 }
